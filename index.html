@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+        <style>
+            @font-face {
+            font-family: "LeeSeoyun";
+            src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+            format("woff");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: "LeeSeoyun";
+            margin: 0;
+
+            background-image: url("./background.png");
+        }
+        .header{
+            width: 100%;
+            text-align: center;
+            margin-top: 5rem;
+        }
+        .center_box{
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        </style>
+</head>
+<body>
+    <h1 class="header">컴퓨터 가위, 바위, 보 맞추기</h1>
+    <script>
+        var game = prompt("가위, 바위, 보 중 선택하세요.","가위");
+
+        var gameNum;
+
+        switch(game) {
+            case "가위":
+                gameNum = 1; break;
+            case "바위":
+                gameNum = 2; break;
+            case "보":
+                gameNum = 3; break;
+            default: alert("잘못 작성했습니다.");
+            location.reload();
+        }
+
+        var com = Math.ceil(Math.random()*3);
+
+        document.write("<div class='center_box'><img src=\"./math_img_"+ com + ".png\"></div>");
+
+        if(gameNum == com) {
+            document.write("<p class='center_box'>축하합니다! 일치합니다!</p>");
+        } else {
+            document.write("<p class='center_box'>아쉽습니다. 달라요.</p>");
+        }
+    </script>
+</body>
+</html>
